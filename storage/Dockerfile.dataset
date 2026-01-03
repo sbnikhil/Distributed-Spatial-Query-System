@@ -1,0 +1,5 @@
+FROM python:3.9
+WORKDIR /app
+COPY storage/dataset.py PropertyLookup_pb2.py PropertyLookup_pb2_grpc.py storage/addresses.csv.gz ./
+RUN pip install grpcio grpcio-tools
+CMD ["python", "dataset.py"]

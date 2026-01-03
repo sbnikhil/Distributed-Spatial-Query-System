@@ -1,0 +1,8 @@
+FROM python:3.9
+WORKDIR /app
+
+COPY gateway/cache.py PropertyLookup_pb2.py PropertyLookup_pb2_grpc.py ./
+
+RUN pip install flask grpcio grpcio-tools google protobuf
+
+CMD ["python", "cache.py"]
